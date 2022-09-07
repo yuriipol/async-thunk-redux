@@ -7,11 +7,6 @@ import { addProduct } from "../redux/toolkit/slice";
 export default function Home() {
   const [goods, setGoods] = useState([]);
   const dispatch = useDispatch();
-  const {
-    cart: {
-      items: { carts: cart },
-    },
-  } = useSelector((store) => store);
 
   useEffect(() => {
     function fetchGoods() {
@@ -23,10 +18,7 @@ export default function Home() {
   }, []);
 
   function handleClick(item) {
-    console.log(item);
-    cart.find(({ id }) => item.id === id)
-      ? alert("Already exists")
-      : dispatch(addProduct(item));
+    dispatch(addProduct(item));
   }
 
   return (

@@ -1,15 +1,11 @@
 import styles from "./Navigation.module.scss";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { StrictMode } from "react";
 
 export default function Navigation() {
-  const {
-    cart: {
-      items: { carts: cart },
-    },
-  } = useSelector((store) => {
-    console.log(store);
-    return store;
+  const cart = useSelector((store) => {
+    return store.cart;
   });
 
   const getClassName = ({ isActive }) => {

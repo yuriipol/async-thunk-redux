@@ -35,10 +35,19 @@ const cartSlice = createSlice({
         state = state.splice(itemIndex, 1);
       }
     },
+
+    initGoods: (state, { payload }) => {
+      return payload;
+    },
   },
 });
 
-export const { addProduct, removeProduct, incrementProduct, decrementProduct } =
-  cartSlice.actions;
+export const {
+  addProduct,
+  removeProduct,
+  incrementProduct,
+  decrementProduct,
+  initGoods,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -3,18 +3,17 @@ import { useDispatch, useSelector } from "react-redux";
 // import { addProductAction } from "../redux/actions";
 // import { addProductAction } from "../redux/toolkit/actions";
 import { addProduct } from "../redux/toolkit/slice";
+// import fetchGoods from "../service/api";
+import { initGoodsOperations } from "../redux/operations";
 
 export default function Home() {
-  const [goods, setGoods] = useState([]);
+  // const [goods, setGoods] = useState([]);
+  const goods = useSelector((state) => state.cartAll);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    function fetchGoods() {
-      fetch(`https://62becfba0bc9b125615fd0f7.mockapi.io/api/products`)
-        .then((result) => result.json())
-        .then((goods) => setGoods(goods));
-    }
-    fetchGoods();
+    dispatch(initGoodsOperations());
+    // fetchGoods(setGoods);
   }, []);
 
   function handleClick(item) {

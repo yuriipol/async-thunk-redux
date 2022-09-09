@@ -8,7 +8,7 @@ import {
   REGISTER,
 } from "redux-persist";
 import { configureStore } from "@reduxjs/toolkit";
-import logger from "redux-logger";
+// import logger from "redux-logger";
 import { persistedReducer } from "./rootReducer";
 
 const customMiddleware = (store) => (next) => (action) => {

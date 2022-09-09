@@ -5,7 +5,7 @@ import {
   removeProduct,
   incrementProduct,
   decrementProduct,
-} from "../redux/toolkit/slice";
+} from "../redux/toolkit/cart-slice";
 
 export default function Bucket() {
   const goods = useSelector((state) => {
